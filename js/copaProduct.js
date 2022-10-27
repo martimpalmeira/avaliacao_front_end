@@ -1,8 +1,7 @@
 import Product from './product.js'
 
 const section = document.querySelector('section')
-let cards = document.querySelectorAll('.card');
-let listaProdutos;
+
 
 //Produtos Copa
 const prod1 = new Product('Camisa Copa', 230.0, 'Lorem ipsum dolor sit amet', '../img/camisa-copa.png', 'Copa');
@@ -97,13 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     showProd()
 }, false);
 
-let produtosNoCarrinho = [];
 
 function showProd(){
 listProductObj.forEach(prodObj => {
-    if (count <= limitOfProductsToShow) {
+    if (prodObj.segment == 'Copa') {
         const div = document.createElement('div')
-        div.classList.add('card')
         const imgProd = document.createElement('img')
         const pTitle = document.createElement('p')
         const pPrice = document.createElement('p')
@@ -125,29 +122,6 @@ listProductObj.forEach(prodObj => {
     count++
 
 })
-
-const numberItems = document.querySelector('.number-items');
-
-let num = 0;
-
-cards = document.querySelectorAll('.card');
-listaProdutos = document.querySelector('.lista-produtos')
-cards.forEach(x=>{
-    x.addEventListener('click',()=>{   
-        const name = x.childNodes[1].textContent
-        listaProdutos.innerText += "• " + name + "\n";
-        num+=1;
-        numberItems.innerHTML = num;
-        
-        listProductObj.forEach(prodObj =>{
-            if(prodObj.name == name){
-                produtosNoCarrinho.push(prodObj)
-                console.log(produtosNoCarrinho)
-            }
-        })
-
-    })
-})
 }
 
 
@@ -159,9 +133,8 @@ searchInput.addEventListener('keydown', () => {
       }
 
       listProductObj.forEach(prodObj => {
-            if((prodObj.name).toLowerCase().includes(searchInput.value.toLowerCase())){
+            if(((prodObj.name).toLowerCase().includes(searchInput.value.toLowerCase())) && prodObj.segment == 'Copa'){
             const div = document.createElement('div')
-            div.classList.add('card')
             const imgProd = document.createElement('img')
             const pTitle = document.createElement('p')
             const pPrice = document.createElement('p')
@@ -186,20 +159,6 @@ searchInput.addEventListener('keydown', () => {
 })
 
 
-
-const carrinho = document.querySelector('.carrinho');
-const openCarrinho = document.querySelector('.open-carrinho');
-
-carrinho.addEventListener('click', handleCarrinhoClick)
-
-function handleCarrinhoClick(){
-    openCarrinho.classList.toggle('show')
-    console.log('d')
-}
-
-
-
-    
 
 
 
