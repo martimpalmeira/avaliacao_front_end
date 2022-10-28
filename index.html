@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,43 @@
     <title>Avaliação Front End</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <a href="#"><h1>HOME</h1></a>
+            <a class="link-home" href="#">
+                <h1>HOME</h1>
+            </a>
             <div>
                 <ul>
-                    <li><a class="link-vestuario" href="./pages/vestuario.html">Vestuário</a></li>
-                    <li><a class="link-copa" href="./pages/copaProduct.html">Copa</a></li>
-                    <li><a class="link-eletronicos" href="./pages/eletronicos.html">Eletrônicos/SetUp</a></li>          
+                    <li><a class="link-vestuario">Vestuário</a></li>
+                    <li><a class="link-copa">Copa</a></li>
+                    <li><a class="link-eletronicos">Eletrônicos/SetUp</a></li>
                 </ul>
                 <div class="carrinho">
-                    <span class="number-items"></span>
-                    <a href="#">Meu carrinho</a>
-                    <img src="./img/icone-carrinho.png" alt=""> 
+                    <div class="carrinho-title">
+                        <a href="#">Meu carrinho</a>
+                        <img src="./img/icone-carrinho.png" alt="">
+                        <span class="number-itens"></span>
+                    </div>
+
                     <div class="open-carrinho">
-                        Nomes dos produtos adicionados: 
-                        <ul>
-                            <li class="lista-produtos"></li>
-                        </ul>
-                    </div>      
+                        <p class="produtos-adicionados-title">PRODUTOS ADICIONADOS</p>
+                        <div class="itens-container"></div>
+                        <div class="total-container"><p class="total">Total </p><span class="valor-total"></span></div>
+                    </div>
                 </div>
                 <input class="search-input" type="text" placeholder="Buscar produto">
             </div>
-            
+
         </nav>
     </header>
     <main>
-        <section> 
+        <section>
         </section>
     </main>
     <footer></footer>
     <script type="module" src="./js/script.js"></script>
 </body>
+
 </html>
